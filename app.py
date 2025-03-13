@@ -5,6 +5,7 @@ from io import BytesIO
 
 # Configuração da página
 st.set_page_config(page_title="PetShop Agro", layout="wide")
+st.markdown("### ⬅️ **Clique aqui para navegar no menu!**")
 
 # Cabeçalho
 st.image("logo.png", width=800)  # Substitua pelo logo da loja
@@ -14,6 +15,7 @@ st.title("Bem-vindo ao PetShop Agro!")
 opcao = st.sidebar.radio("Menu", ["Início", "Produtos", "Serviços", "Contato"])
 
 if opcao == "Início":
+    
     st.header("🐶 Seu PetShop e Agropecuária de Confiança! 🌾")
 
     # Carregar imagem da internet corretamente
@@ -46,3 +48,23 @@ elif opcao == "Contato":
 # Rodapé
 st.markdown("---")
 st.write("📍 **PetShop Agro - Cuidando do seu pet e da sua fazenda!**")
+st.markdown(
+    """
+    <style>
+        [data-testid="stSidebar"] {
+            background-color: #157eac;  /* Cor de fundo dourada */
+            border-right: 5px solid #FF8C00; /* Borda laranja */
+        }
+        [data-testid="stSidebarNav"]::before {
+            content: "⬅️ Clique aqui para abrir o menu!";
+            font-size: 18px;
+            font-weight: bold;
+            color: #FF4500;  /* Vermelho-alaranjado */
+            display: block;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
